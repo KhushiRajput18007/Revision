@@ -70,30 +70,30 @@ DSA Interview Questions
 22. Kth smallest element in an array
 23. Spiral order traversal
 24. Rotate o matrix by 90 degrees
-25.Check if a number is Prime or not
-26.Check if a number is palindrome or not
-27.Check if a array is sorted 
-28.Find Index of target in an array.
-29.Point Frequency of each element
-30.Reverse a String (two pointer)
-31.Find Missing number in 1 to n
-32.chech if string is anagram.
-33.Implement stack using array
-34.Implement queue using Array
-35.Implement stack using linked list
-36.Implement queue using Linked List
-37.Implement circular queue using array
-38.Implement circular queue using linked list
-39.Implement dequeue using array
-40.Implement dequeue using linked list
-41.Implement singly linked list
-42.Implement doubly linked list
-43.Reverse a Singly Linked List
-44.Reverse a Doubly Linked List
-45.Merge Sort on LinkedList
-46.Insertion sort on LinkedList
-47.Bubble sort on LinkedList
-48.Selection sort on LinkedList
-49.Binary search tree implementation
-50.Inorder Traversal of BST
-51.PreOrder Traversal of BST
+25. Check if a number is Prime or not
+26. Check if a number is palindrome or not
+27. Check if a array is sorted 
+28. Find Index of target in an array.
+29. Point Frequency of each element
+30. Reverse a String (two pointer)
+31. Find Missing number in 1 to n
+32. chech if string is anagram.
+33. Implement stack using array
+34. Implement queue using Array
+35. Implement stack using linked list
+36. Implement queue using Linked List
+37. Implement circular queue using array
+38. Implement circular queue using linked list
+39. Implement dequeue using array
+40. Implement dequeue using linked list
+41. Implement singly linked list
+42. Implement doubly linked list
+43. Reverse a Singly Linked List
+44. Reverse a Doubly Linked List
+45. Merge Sort on LinkedList
+46. Insertion sort on LinkedList
+47. Bubble sort on LinkedList
+48. Selection sort on LinkedList
+49. Binary search tree implementation
+50. Inorder Traversal of BST
+51. PreOrder Traversal of BST
