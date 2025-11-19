@@ -2,98 +2,284 @@
 
 ## Quick Reference
 
-### 20. Promise.all() vs Promise.allSettled()
+---
 
-- **Promise.all()**: Resolves only if all promises succeed, and rejects if any fails
-- **Promise.allSettled()**: Waits for all promises to complete and returns both successes and failures
+### **1. Different types of datatypes in JavaScript**
+**Answer:**  
+JavaScript has **7 primitive** data types — `String`, `Number`, `Boolean`, `Null`, `Undefined`, `BigInt`, `Symbol` — and **one non-primitive** type which is `Object`.  
+Arrays, Functions, Dates, all come under Objects.
 
-### 21. async/await
+---
 
-Async/await is a cleaner way to work with promises using synchronous-looking code.
+### **2. What is hoisting?**
+**Answer:**  
+Hoisting means JavaScript moves declarations to the top before execution.  
+- `var` is hoisted with value `undefined`  
+- `let` & `const` are hoisted but kept in **Temporal Dead Zone**  
+- Function declarations are fully hoisted  
 
-### 22. How do you handle promises?
+---
 
-- Using `.then()`/`.catch()`
+### **3. Difference between var, let and const**
+**Answer:**  
+- `var` is function-scoped and can be redeclared  
+- `let` is block-scoped and cannot be redeclared  
+- `const` is block-scoped and cannot be reassigned  
+`let` & `const` avoid hoisting issues.
+
+---
+
+### **4. Is JS dynamically or statically typed?**
+**Answer:**  
+JavaScript is **dynamically typed** because variable types are decided at **runtime**, not compile time.
+
+---
+
+### **5. Passed by value vs passed by reference**
+**Answer:**  
+- Primitives → passed **by value** (copy is passed)  
+- Objects → passed **by reference** (actual reference is passed)
+
+---
+
+### **6. Higher Order Functions**
+**Answer:**  
+A higher-order function takes another function as an argument or returns a function.  
+Examples: `map`, `filter`, `reduce`.
+
+---
+
+### **7. Explain ‘this’ keyword**
+**Answer:**  
+`this` depends on how a function is called:
+- In objects → refers to that object  
+- In regular functions → global object / undefined (strict mode)  
+- In arrow functions → lexical `this` (parent scope)
+
+---
+
+### **8. call, apply, bind**
+**Answer:**  
+- `call` → invokes function immediately with custom `this`  
+- `apply` → same as call but arguments as array  
+- `bind` → returns new function with `this` permanently set  
+
+---
+
+### **9. Arrow vs Regular functions**
+**Answer:**  
+Arrow functions:
+- Do NOT have their own `this`
+- Do NOT have `arguments`
+- Cannot be constructors  
+Regular functions have all of these.
+
+---
+
+### **10. Function declaration vs function expression**
+**Answer:**  
+- Function declarations → hoisted  
+- Function expressions → NOT fully hoisted  
+
+---
+
+### **11. What is the Event Loop?**
+**Answer:**  
+The Event Loop makes JavaScript asynchronous by checking the **call stack** and moving pending callbacks from the queue when the stack becomes empty.
+
+---
+
+### **12. What are Promises?**
+**Answer:**  
+A Promise represents a value that may be available **now**, **later**, or **never**. Helps avoid callback hell.
+
+---
+
+### **13. States of a Promise**
+**Answer:**  
+- **Pending**  
+- **Fulfilled**  
+- **Rejected**
+
+---
+
+### **14. Methods of Promise**
+**Answer:**  
+- `.then()`  
+- `.catch()`  
+- `.finally()`
+
+---
+
+### **15. What is async/await?**
+**Answer:**  
+Async/await is syntactic sugar over promises, allowing async code to be written in synchronous style.
+
+---
+
+### **16. What are Closures?**
+**Answer:**  
+A closure is when an inner function remembers variables of its outer function even after the outer function has finished executing.
+
+---
+
+### **17. States of Promise (again)**
+**Answer:**  
+- **Pending** → waiting  
+- **Fulfilled** → success  
+- **Rejected** → failed  
+
+---
+
+### **18. What is promise chaining?**
+**Answer:**  
+Executing multiple async operations in sequence using `.then()` repeatedly.
+
+---
+
+### **19. What happens if we return a promise inside .then()?**
+**Answer:**  
+The next `.then()` waits for the returned promise to resolve or reject.
+
+---
+
+### **20. Promise.all() vs Promise.allSettled()**
+**Answer:**  
+- `Promise.all()` → fails if **any** promise fails  
+- `Promise.allSettled()` → waits for all, never fails, returns status + value/reason  
+
+---
+
+### **21. What is async/await?**
+(Answered above)
+
+---
+
+### **22. How to handle Promises?**
+**Answer:**  
+- Using `.then()` / `.catch()`  
 - Using `async/await` with `try/catch`
 
-### 23. Methods of promises
+---
 
-- `then`
-- `catch` 
-- `finally`
+### **23. Methods of Promises**
+**Answer:**  
+- `Promise.resolve()`  
+- `Promise.reject()`  
+- `Promise.all()`  
+- `Promise.any()`  
+- `Promise.race()`  
+- `Promise.allSettled()`  
 
-### 24. What is garbage collection?
+---
 
-JavaScript automatically frees memory that's no longer reachable or referenced.
+### **24. What is Garbage Collection?**
+**Answer:**  
+Garbage collection frees memory that is no longer reachable using the **Mark-and-Sweep** algorithm.
 
-### 25. What is debouncing?
+---
 
-Debouncing ensures a function runs only after the user stops triggering it for a specified time—commonly used in search input.
+### **25. What is Debouncing?**
+**Answer:**  
+Debouncing ensures a function runs only after a pause in events (e.g., search suggestions).
 
-### 26. Stack vs Heap
+---
 
-- **Stack**: Stores primitive values and function calls
-- **Heap**: Stores objects and arrays
+### **26. Stack vs Heap**
+**Answer:**  
+- **Stack** → primitives & function calls  
+- **Heap** → objects & dynamic memory  
 
-### 27. What are dynamic imports?
+---
 
-Dynamic import loads JavaScript modules on demand, improving performance.
+### **27. Dynamic Imports**
+**Answer:**  
+Import modules on demand using `import()`. Useful for code-splitting.
 
-### 28. Function currying
+---
 
-Currying means breaking a function with multiple arguments into a chain of functions, each taking one argument.
+### **28. What is Function Currying?**
+**Answer:**  
+Turning a multi-argument function into a series of single-argument functions.
 
-### 29. Pure vs Impure functions
+---
 
-- **Pure function**: Returns the same output for the same input and has no side effects
-- **Impure functions**: Modify external state or depend on it
+### **29. Pure vs Impure function**
+**Answer:**  
+- Pure → same input → same output, no side effects  
+- Impure → depends on or modifies external state  
 
-### 30. What is a prototype?
+---
 
-Prototype is an object from which other objects inherit properties and methods.
+### **30. What is Prototype?**
+**Answer:**  
+Hidden object where shared methods/properties are stored for inheritance.
 
-### 31. Prototypal inheritance
+---
 
-It allows objects to inherit properties from other objects via the prototype chain.
+### **31. Prototypal Inheritance**
+**Answer:**  
+Objects inherit properties from other objects via the **prototype chain**.
 
-### 32. Memory Leaks
+---
 
-Memory leaks happen when unused memory isn't released—usually due to global variables, unremoved event listeners, or hanging timers.
+### **32. Memory Leaks in JS**
+**Answer:**  
+Caused by:
+- global variables  
+- unused intervals  
+- DOM references not removed  
 
-### 33. What is throttling?
+---
 
-Throttling ensures a function runs at fixed intervals, even if triggered multiple times.
+### **33. What is Throttling?**
+**Answer:**  
+Limits how often a function executes (e.g., scroll events) — once per fixed time window.
 
-### 34. What is memoization?
+---
 
-Memoization caches a function's results to avoid recalculating.
+### **34. What is Memoization?**
+**Answer:**  
+Caching function results to avoid recalculating.
 
-### 35. Event Delegation
+---
 
-Instead of adding event listeners to multiple child elements, we add one listener to the parent and use event bubbling to detect the target.
+### **35. Event Delegation**
+**Answer:**  
+Attach one event listener to a parent and use event bubbling to detect child events.
 
-### 36. DOM vs BOM
+---
 
-- **DOM**: Represents the structure of the web page
-- **BOM**: Represents browser-specific objects like window, history, location
+### **36. DOM vs BOM**
+**Answer:**
+- **DOM** → document structure  
+- **BOM** → browser-specific APIs like window, navigator, history  
 
-### 37. Event Bubbling & Capturing
+---
 
-- **Capturing**: Events travel from parent to child
-- **Bubbling**: Events travel from child to parent
+### **37. Event Bubbling and Capturing**
+**Answer:**  
+- Capturing → top → target  
+- Bubbling → target → top  
 
-### 38. Object.freeze() vs Object.seal()
+---
 
-- **freeze()**: Makes an object completely immutable
-- **seal()**: Allows modifying existing properties but disallows adding or deleting properties
+### **38. Object.freeze() vs Object.seal()**
+**Answer:**  
+- `freeze` → lock properties completely  
+- `seal` → prevent add/delete, but can modify values  
 
-### 39. Event Propagation
+---
 
-It describes how an event travels through the DOM: capturing → target → bubbling.
+### **39. What is Event Propagation?**
+**Answer:**  
+Flow of an event: **Capturing → Target → Bubbling**
 
-### 40. What is a polyfill?
+---
 
-A polyfill is code that provides modern features in older browsers that don't support them.
+### **40. What is a Polyfill?**
+**Answer:**  
+A custom implementation of a feature not supported in older browsers.
 
 ---
 
