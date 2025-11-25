@@ -103,30 +103,48 @@ public:
 ```cpp
 class Solution {
 public:
-    void reverseRange(vector<int>& nums, int start, int end) {
-        while (start < end) {
-            int temp = nums[start];
+    void rotate(vector<int>& nums, int k) {
+        int n = nums.size();
+        k = k % n;
+
+        int start, end, temp;
+
+        // Step 1: reverse whole array
+        start = 0;
+        end = n - 1;
+        while(start < end) {
+            temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start++;
+            end--;
+        }
+
+        // Step 2: reverse first k elements
+        start = 0;
+        end = k - 1;
+        while(start < end) {
+            temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start++;
+            end--;
+        }
+
+        // Step 3: reverse last n-k elements
+        start = k;
+        end = n - 1;
+        while(start < end) {
+            temp = nums[start];
             nums[start] = nums[end];
             nums[end] = temp;
             start++;
             end--;
         }
     }
-
-    void rotate(vector<int>& nums, int k) {
-        int n = nums.size();
-        if (n == 0) return;
-
-        k = k % n;
-
-        // Reverse whole array
-        reverseRange(nums, 0, n - 1);
-        // Reverse first k
-        reverseRange(nums, 0, k - 1);
-        // Reverse remaining n-k
-        reverseRange(nums, k, n - 1);
-    }
 };
+
+  
 ```
 
 - Time: `O(n)`
