@@ -40,26 +40,34 @@ public:
         long long second = -1000000000000LL;
         long long third = -1000000000000LL;
 
-        for (int x : nums) {
+class Solution {
+public:
+    vector<int> top3(vector<int>& nums) {
+        int first = -1000000000;
+        int second = -1000000000;
+        int third = -1000000000;
+
+        for (int i = 0; i < nums.size(); i++) {
+            int x = nums[i];  // get current element
+
             if (x > first) {
                 third = second;
                 second = first;
                 first = x;
-            } else if (x > second && x != first) {
+            } 
+            else if (x > second) {
                 third = second;
                 second = x;
-            } else if (x > third && x != first && x != second) {
+            }
+            else if (x > third) {
                 third = x;
             }
         }
 
-        vector<int> ans;
-        if (first > -1000000000000LL) ans.push_back((int)first);
-        if (second > -1000000000000LL) ans.push_back((int)second);
-        if (third > -1000000000000LL) ans.push_back((int)third);
-        return ans;
+        return {first, second, third};
     }
 };
+
 ```
 
 - Time: `O(n)`
